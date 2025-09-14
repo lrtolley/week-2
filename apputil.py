@@ -38,7 +38,7 @@ def sort_names(names, scores):
     names: array of names
     scores: array of scores'''
     zipped_scores = dict(zip(names, scores))
-    sorted_score = sorted(zipped_scores.items(), key=lambda item: item[1])
+    sorted_score = sorted(zipped_scores.items(), key=lambda item: item[1], reverse=True)
     #cleaned_score = [item[0] for item in sorted_score]
     
     return sorted_score
