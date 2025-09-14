@@ -35,9 +35,10 @@ def lowest_score(names, scores):
 def sort_names(names, scores):
     '''
     Returns a list of names sorted by their scores in descending order.
-    names: np.array of names
-    scores: np.array of scores'''
-    sorted_score = ndarray.sort(scores)
-    desc_score = reversed(sorted_score)
-    desc_names = names[desc_score] 
-    return desc_score
+    names: array of names
+    scores: array of scores'''
+    zipped_scores = dict(zip(names, scores))
+    sorted_score = sorted(zipped_scores.items(), key=lambda item: item[1])
+    #cleaned_score = [item[0] for item in sorted_score]
+    
+    return sorted_score
