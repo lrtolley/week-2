@@ -38,7 +38,9 @@ def sort_names(names, scores):
     names: array of names
     scores: array of scores'''
     zipped_scores = dict(zip(names, scores))
-    sorted_score = sorted(zipped_scores.items(), key=lambda item: item[1], reverse=True)
-    #cleaned_score = [item[0] for item in sorted_score]
-    
-    return sorted_score
+    sorted_score = sorted(zipped_scores.items(), key=lambda item: item[1], reverse=True) #sorts the values by the second (index place #1)
+                                                                                         # /values part of the dictionary. This accidentally makes it a list for some reason. 
+    back_to_dictionary = {key: value for key, value in sorted_score} #Turns it back into a dictionary
+    names_only = back_to_dictionary.keys() #takes only the sorted names, the key values, as this is what autograder is looking for
+
+    return names_only
